@@ -8,3 +8,13 @@ export function getDogs() {
         });
     };
 }
+
+export function getDogName(name) {
+    return async function (dispatch) {
+        let json = await axios.get(`http://localhost:3001/dogs?name=${name}`);
+        return dispatch({
+            type: "GET_DOG-NAME",
+            payload: json.data,
+        });
+    };
+}

@@ -1,5 +1,5 @@
 const initialState = {
-    dogs: []
+    dogs: [],
 }
 
 function rootReducer(state = initialState, action){
@@ -10,6 +10,15 @@ function rootReducer(state = initialState, action){
                 dogs: action.payload,
                 allDogs: action.payload,
             };
+        
+            case "GET_DOG-NAME":
+                return{
+                    ...state,
+                    dogs: action.payload,          
+                };
+            
+         default:
+            return state;
     }
 }
 
