@@ -10,10 +10,10 @@ const getApiInfo = async () => {
         id: e.id,
         name: e.name,
         height: e.height.metric!='NaN' ? e.height.metric : e.height.imperial,
-        weight: e.weight.metric.includes('NaN') ? "1 - 99" : e.weight.metric,
+        weight: e.weight.metric ? e.weight.metric : e.weight.imperial,
         life_span: e.life_span,
         image_url: e.image.url,
-        temperaments: e.temperament ? e.temperament.split(', ').map(temp => ({name: temp})) : null,
+        temperament: e.temperament,
         home_grown_data: false,
         bred_for: e.bred_for
     }));
