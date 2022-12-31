@@ -14,7 +14,7 @@ router.get("/dogs", getAllDogsOrByQuery);
 
 router.get("/dogs/:id", getDogsById)
 
-router.post("/dogs", createDog)
+router.post("/dog", createDog)
 
 router.get("/temperaments", getAllTemperaments);
 

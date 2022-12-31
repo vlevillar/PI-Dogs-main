@@ -35,3 +35,37 @@ export function orderByName(payload){
         payload,
     };
 }
+
+export function filterTemperament(payload){
+    return {
+        type: "FILTER_TEMPERAMENT",
+        payload,
+    };
+}
+
+export function filterExistingBreed(payload){
+    return {
+        type: "FILTER_EXISTING_BREED",
+        payload,
+    };
+}
+
+export function sortWeight(payload){
+    return {
+        type: "SORT_WEIGHT",
+        payload,
+    }
+}
+
+export function postDogs(payload){
+    return async function(){
+        const create = await axios.post('http://localhost:3001/dog',payload);
+        return create;
+    }
+}
+
+export function resState(){
+    return {
+        type: "RES_STATE",
+    }
+}

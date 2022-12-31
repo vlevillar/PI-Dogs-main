@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./CardStyle.css";
 
-export const Card = ({ name, image_url, temperament, weight, id }) => {
+export const Card = ({ name, image, temperament, weight, id }) => {
 	return (
 		<div className="card">
 			<div className="face front">
-				<img src={image_url} alt="imagen no encontrada" />
+				<img src={image} alt="imagen no encontrada"/>
 				<h3>{name}</h3>
 			</div>
 			<div className="face back">
