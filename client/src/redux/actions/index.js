@@ -11,9 +11,9 @@ export function getDogs() {
 
 export function getTemperaments(){
     return async function (dispatch){
-        let json = await axios("http://localhost:3001/temperaments")
+        let json = await axios("http://localhost:3001/temperament");
         return dispatch({
-            type: "GET_TEMPERAMENTS",
+            type:"GET_TEMPERAMENTS",
             payload: json.data,
         });
     };
@@ -45,7 +45,7 @@ export function filterTemperament(payload){
 
 export function filterExistingBreed(payload){
     return {
-        type: "FILTER_EXISTING_BREED",
+        type:"FILTER_EXISTING_BREED",
         payload,
     };
 }

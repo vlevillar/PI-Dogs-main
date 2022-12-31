@@ -16,6 +16,6 @@ router.get("/dogs/:id", getDogsById)
 
 router.post("/dog", createDog)
 
-router.get("/temperaments", getAllTemperaments);
+router.get("/temperament", getAllTemperaments);
 
 module.exports = router;

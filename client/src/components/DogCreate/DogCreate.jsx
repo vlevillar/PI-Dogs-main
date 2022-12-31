@@ -8,7 +8,7 @@ import { validation } from "./ErrorsCreate";
 
 export default function DogCreate() {
     const dispatch = useDispatch();
-    const allTemperaments = useSelector((e) => e.temperament);
+    const allTemperaments= useSelector((e) => e.temperament);
 
     const [input, setInput] = useState({
         name: "",
@@ -52,7 +52,7 @@ export default function DogCreate() {
             temperament: [],
             createdInBd: true,
           });
-          alert('Dog Create!!')
+          alert('Dog Created!')
       }
       function handelChange(e) {
         setInput({

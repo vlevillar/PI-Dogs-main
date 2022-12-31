@@ -67,23 +67,23 @@ function rootReducer(state = initialState, action){
                 dogs: filterTemperament,
             }
 
-        case "FILTER_EXISTING_BREED":
-            if(action.payload === "all"){
-                return {
-                    ...state,
-                    dogs: [...state.allDogs],
-                }
-            }else if(action.payload === "db"){
-                return{
-                    ...state,
-                    dogs: state.allDogs.filter((breed) => breed.createdInDb === true),
-                }
-            }else {
-                return {
-                    ...state,
-                    dogs: state.allDogs.filter((breed) => breed.createdInDb === undefined),
-                }
+        case "FILTER_EXISTING_BREED":         
+        if(action.payload === "all"){   
+            return { 
+                ...state,
+                dogs: [...state.allDogs],     
             }
+        }else if( action.payload === "db"){
+         return { 
+            ...state,
+             dogs : state.allDogs.filter((breed)=> breed.createdInBd === true),
+                }
+        }else{
+            return { 
+                ...state,
+                 dogs : state.allDogs.filter((breed)=> breed.createdInBd === undefined),
+                }
+        }
         
         case "SORT_WEIGHT":
             if( action.payload === 'All'){

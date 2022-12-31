@@ -123,12 +123,12 @@ export default function Home() {
           ))}
       </select>
 
-      <select onChange={e => handleFilterExistingBreed(e)}>
+      <select onChange={(e) => {handleFilterExistingBreed(e)}}>
         <option value="all">All existing breed</option>
-        <option value="db">Existing breed in DB</option>
-        <option value="api">Existing breed in API</option>
+        <option value="db" >Existing breed in DB</option>
+        <option value="api" >Existing breed in API</option>
       </select>
-
+      
       <div className="cards">
         {currentDog?.map((e) => {
           return (
