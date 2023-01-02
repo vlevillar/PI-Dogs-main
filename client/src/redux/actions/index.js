@@ -1,4 +1,5 @@
 import axios from "axios";
+
 export function getDogs() {
     return async function (dispatch) {
         let json = await axios("http://localhost:3001/dogs");
@@ -28,6 +29,16 @@ export function getDogName(name) {
         });
     };
 }
+
+export function getDetail(id){
+    return async function(dispatch){
+        const json = await axios.get('http://localhost:3001/dogs/'+id)
+        return dispatch({
+            type:"GET_DETAIL",
+            payload: json.data,
+        })
+    }
+}  
 
 export function orderByName(payload){
     return{

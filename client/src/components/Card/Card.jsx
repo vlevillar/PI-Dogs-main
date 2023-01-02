@@ -14,7 +14,7 @@ export const Card = ({ name, image, temperament, weight, id }) => {
 				<h2>{temperament}</h2>
 				<h3>{weight}</h3>
 				<button className="link">
-					<Link to={`/home/${id}`}>{name}</Link>
+					<Link key={id} to={`/dogs/` + id}>{name}</Link>
 				</button>
 			</div>
 		</div>

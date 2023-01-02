@@ -2,7 +2,7 @@ const initialState = {
     dogs: [],
     allDogs: [],
     temperament: [],
-    detail: [],
+    detail: null
 }
 
 function rootReducer(state = initialState, action){
@@ -25,6 +25,12 @@ function rootReducer(state = initialState, action){
                 ...state,
                 dogs: action.payload,          
             };
+        
+        case "GET_DETAIL":
+            return{
+                ...state,
+                detail: action.payload,
+            }
             
         case "ORDER_BY_NAME":
             const sortedArr =
@@ -60,7 +66,7 @@ function rootReducer(state = initialState, action){
                         return e
                     }
                 }
-            return false
+            return state
             })
             return {
                 ...state,
@@ -121,6 +127,8 @@ function rootReducer(state = initialState, action){
                 if( action.payload === 'big'){
                     
                 return {
+
+                    ...state,
                     allDogs: [...state.allDogs].sort((a, b) =>{
                         let pesoA= parseInt(a.weight.split('-')[0]);
                         let pesoB= parseInt(b.weight.split('-')[0]);
@@ -141,10 +149,10 @@ function rootReducer(state = initialState, action){
             };
             break;
 
-            case "RES-STATE":
+            case "RES_STATE":
                 return{
                     ...state,
-                    detail: []
+                    detail: null
                 }
 
          default:
