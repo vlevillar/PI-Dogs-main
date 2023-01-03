@@ -11,7 +11,8 @@ import {
 import { Card } from "../Card/Card";
 import Pages from "../Pages/Pages";
 import SearchBar from "../SearchBar/SearchBar";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./HomeStyle.css"
 
 export default function Home() {
   const [, setOrden] = useState("");
@@ -76,17 +77,18 @@ export default function Home() {
   return (
     <div className="home">
       <div className="nav">
-        <NavLink to="/dog">
-          <h4>Create Breed</h4>
-        </NavLink>
+        <Link to="/dog">
+          <button id="buttonCreate">Create Breed</button>
+        </Link>
         <div className="searchbar">
           <SearchBar setCurrentPage={setCurrentPage} />
         </div>
       </div>
 
       <br />
-      <div className="filters">
+      <div>
         <button
+          className="refresh"
           onClick={(e) => {
             handleClick(e);
             setCurrentPage(1);
@@ -97,6 +99,7 @@ export default function Home() {
       </div>
 
       <select
+        className="filter"
         onChange={(e) => {
           handleSortName(e);
         }}
@@ -106,13 +109,13 @@ export default function Home() {
         <option value="desc">Z - A</option>
       </select>
 
-      <select onChange={(e) => {handleSortWeight(e)}}>
+      <select className="filter" onChange={(e) => {handleSortWeight(e)}}>
         <option value="All">By weight</option>
         <option value="small">Light</option>
         <option value="big">Heavy</option>
       </select>
 
-      <select onChange={e => handleFilterTemperaments(e)}>
+      <select className="filter" onChange={(e) => handleFilterTemperaments(e)}>
         <option value="all">All temperaments</option>
         {allTemperaments &&
           allTemperaments.map((e) => (
@@ -123,7 +126,7 @@ export default function Home() {
           ))}
       </select>
 
-      <select onChange={(e) => {handleFilterExistingBreed(e)}}>
+      <select className="filter" onChange={(e) => {handleFilterExistingBreed(e)}}>
         <option value="all">All existing breed</option>
         <option value="db" >Existing breed in DB</option>
         <option value="api" >Existing breed in API</option>

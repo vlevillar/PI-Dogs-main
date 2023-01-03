@@ -22,11 +22,6 @@ export default function Detail(){
 
     return (
         <div className="main">
-            <div className="paginado">
-                <Link to= "/home">
-                <button className="boton4" onClick={resState}>Home</button>
-                </Link>
-            </div>
                 {dogDetail 
                 ?  (
                 <main className="paginado2">
@@ -61,6 +56,11 @@ export default function Detail(){
                 )  :(
               <Loading />
                 )}
+                <div className="paginado">
+                <Link to= "/home">
+                <button className="boton4" onClick={resState}>Home</button>
+                </Link>
+            </div>
         </div>
     )
 }

@@ -9,11 +9,12 @@ export default function Pages({ dogsPerPage, paginado, allDog }) {
 	}
 
 	return (
-		<nav>
-			<ul className="pagination">
+		<div>
+			<div className="pagination">
 				{pageNumbers &&
 					pageNumbers.map(number => {
 						return (
+						<ul key = {number}>
 							<button
 								className="number"
 								key={number}
@@ -21,9 +22,10 @@ export default function Pages({ dogsPerPage, paginado, allDog }) {
 							>
 								{number}
 							</button>
+						</ul>
 						);
 					})}
-			</ul>
-		</nav>
+			</div>
+		</div>
 	);
 }

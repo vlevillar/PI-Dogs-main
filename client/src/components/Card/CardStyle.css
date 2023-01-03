@@ -75,7 +75,7 @@
 }
 
 .link{
-	background-color: black;
+	background-color: #87bee4;
 	border: none;
 	color: white;
 	padding: 16px 32px;
@@ -90,10 +90,10 @@
 
 .link {
 	background-color: white; 
-	color: black; 
+	color: #87bee4; 
   }
   
   .link:hover {
-	background-color: grey;
+	background-color: #87bee4;
 	color: white;
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
+import "./SearchBarStyle.css"
 import { getDogName } from "../../redux/actions";
 
 export default function Buscador({ setCurrentPage }) {
@@ -23,17 +23,18 @@ export default function Buscador({ setCurrentPage }) {
 		setCurrentPage(1);
 	}
 	return (
-		<div>
+		<div className="wrap">
 			
-			<div>
+			<div className="search">
 				<form onSubmit={handleSubmit}>
 					<input
 						type="text"
 						placeholder="Search dog"
 						onChange={e => handleInputChange(e)}
 						value={name}
+						className="searchTerm"
 					/>
-					<input type="submit" value="Search" />
+					<input type="submit" value="Search" className="searchButton" />
 				</form>
 			</div>
 		</div>

@@ -66,7 +66,7 @@ function rootReducer(state = initialState, action){
                         return e
                     }
                 }
-            return state
+            return state[0]
             })
             return {
                 ...state,

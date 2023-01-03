@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemperaments, resState, postDogs } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-//import "DogCreate.css"
+import "./DogCreate.css"
 import { validation } from "./ErrorsCreate";
 
 export default function DogCreate() {
@@ -211,7 +211,7 @@ export default function DogCreate() {
             </div>
           </div>
           <div className="imgperfil">
-            <img src="https://cdn.shopify.com/s/files/1/1956/7269/products/Boxer-dog-Art-Print_grande.jpg?v=1589294200" alt="perfil" />
+            <img src="https://64.media.tumblr.com/d26b86f59e41e57ecb6d053e93dee97e/tumblr_o0hav8YTDN1uzrrkro1_1280.gif" alt="perfil" />
           </div>
         </div>
       );

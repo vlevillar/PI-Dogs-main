@@ -1,5 +1,24 @@
-.number {
-    display: inline-flex;
-    padding: 5px;
-  }
-  
+.number{
+  color:rgb(205, 205, 218);
+  background-color: rgba(109, 136, 224, 0.993);
+  font-family:  inherit;
+  font-size: medium;
+  cursor: pointer;
+  border-radius: 30%;
+  width: 35px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.number:hover{
+    background-color: rgba(40, 89, 224, 0.986); 
+    height: 100%;
+}
+
+.pagination{
+    display: flex;
+    direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
