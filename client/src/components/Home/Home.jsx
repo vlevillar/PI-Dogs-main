@@ -40,7 +40,6 @@ export default function Home() {
   };
 
   function handleSortName(e) {
-    e.preventDefault();
     if (e.target.value === "all") {
       dispatch(getDogs());
     } else {
@@ -51,13 +50,16 @@ export default function Home() {
   }
 
   function handleSortWeight(e) {
-    e.preventDefault();
-    dispatch(sortWeight(e.target.value));
+    if (e.target.value === "All") {
+      dispatch(getDogs);
+    }else{
+      dispatch(sortWeight(e.target.value));
     setCurrentPage(1);
+    }
   }
 
   const handleFilterTemperaments = (e) => {
-    if (e.target.value === "all") {
+    if (e.target.value === "All") {
       dispatch(getDogs);
     } else {
       dispatch(filterTemperament(e.target.value));
@@ -116,7 +118,7 @@ export default function Home() {
       </select>
 
       <select className="filter" onChange={(e) => handleFilterTemperaments(e)}>
-        <option value="all">All temperaments</option>
+        <option value="All">All temperaments</option>
         {allTemperaments &&
           allTemperaments.map((e) => (
             <option key={e.id} value={e.name}>

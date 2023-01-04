@@ -17,11 +17,11 @@ module.exports = (sequelize) => {
     },
    height: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
    },
     weight: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     life_span: {
       type: DataTypes.STRING,
