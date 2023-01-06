@@ -54,7 +54,7 @@ export default function DogCreate() {
           });
           alert('Dog Created!')
       }
-      function handelChange(e) {
+      function handleChange(e) {
         setInput({
           ...input,
           [e.target.name]: e.target.value,
@@ -108,7 +108,7 @@ export default function DogCreate() {
                     type="text"
                     name="name"
                     value={input.name}
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   /><br/><strong>{errors.name}</strong>
     
                   <label className="title5">Height min:</label>
@@ -116,7 +116,7 @@ export default function DogCreate() {
                     type="number"
                     name="minHeight"
                     value={input.minHeight}
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   /><br/><strong>{errors.minHeight}</strong>
     
                   <label className="title5">Height max:</label>
@@ -124,7 +124,7 @@ export default function DogCreate() {
                     type="number"
                     name="maxHeight"
                     value={input.maxHeight}
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   /><br/><strong>{errors.maxHeight}</strong>
     
                   <label className="title5">Weight min:</label>
@@ -132,7 +132,7 @@ export default function DogCreate() {
                     type="number"
                     name="minWeight"
                     value={input.minWeight}
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   /><br/><strong>{errors.minWeight}</strong>
     
                   <label className="title5">Weight max:</label>
@@ -140,7 +140,7 @@ export default function DogCreate() {
                     type="number"
                     name="maxWeight"
                     value={input.maxWeight}
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   ></input><br/><strong>{errors.maxWeight}</strong>
     
                   <label className="title5">Life span min:</label>
@@ -148,7 +148,7 @@ export default function DogCreate() {
                     type="number"
                     name="minlife_span"
                     value={input.minlife_span}
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   /><br/><strong>{errors.minlife_span}</strong>
     
                   <label className="title5">Life span max:</label>
@@ -156,7 +156,7 @@ export default function DogCreate() {
                     type="number"
                     name="maxlife_span"
                     value={input.maxlife_span}
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   /><br/><strong>{errors.maxlife_span}</strong>
     
                   <label name="image" className="title5">
@@ -166,7 +166,7 @@ export default function DogCreate() {
                     name="image"
                     value={input.image}
                     placeholder='URL'
-                    onChange={(e) => handelChange(e)}
+                    onChange={(e) => handleChange(e)}
                   ></input>
     
                   <label className="title5" value="temperament" name="temperament">

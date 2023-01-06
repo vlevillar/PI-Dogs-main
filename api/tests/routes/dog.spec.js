@@ -12,7 +12,7 @@ const dog = {
   lifespan: '8 - 12',
 };
 const dog2 = {
-  name: 'Poodle',
+  name: 'Timon',
   height: '9 - 14',
   weight: '3 - 5',
   lifespan: '10 - 14',
@@ -39,10 +39,10 @@ describe('GET /dogs routes', () => {
       agent.get('/dogs/280').expect(404)
     )
     it('should get status 200 if query name is valid', () =>
-      agent.get('/dogs?name=Poodle').expect(200)
+      agent.get('/dogs?name=Timon').expect(200)
   )
     it('should get status 404 if query name is invalid', () =>
-      agent.get('/dogs?name=HenryDog').expect(404)
+      agent.get('/dogs?name=Carlos').expect(404)
     )
   });
 });
