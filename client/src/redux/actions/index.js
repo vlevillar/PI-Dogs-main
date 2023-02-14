@@ -75,6 +75,7 @@ export function postDogs(payload){
     }
 }
 
+
 export function filtrosPi(payload){
     return{
         type: "SORT_WEIGHT_PI",
