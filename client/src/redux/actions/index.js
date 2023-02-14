@@ -75,6 +75,13 @@ export function postDogs(payload){
     }
 }
 
+export function filtrosPi(payload){
+    return{
+        type: "SORT_WEIGHT_PI",
+        payload,
+    }
+}
+
 export function resState(){
     return {
         type: "RES_STATE",

@@ -64,7 +64,7 @@ const getDogsById = async (req, res, next) => {
             res.status(200).send(dog);
         }
     } catch (error) {
-        next(error);
+        res.send(error);
     }
 }
 

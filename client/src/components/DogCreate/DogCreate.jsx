@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTemperaments, resState, postDogs } from "../../redux/actions";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import "./DogCreate.css"
 import { validation } from "./ErrorsCreate";
 
 export default function DogCreate() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const allTemperaments= useSelector((e) => e.temperament);
 
     const [input, setInput] = useState({
@@ -31,6 +32,11 @@ export default function DogCreate() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        setErrors(validation(input));
+        const errorCompletarFormu = validation(input);
+        if (Object.values(errorCompletarFormu).length !== 0 || !input.temperament) {
+          alert("All the fields are required");
+        } else {
           let crear = {
             name: input.name,
             height: `${input.minHeight} - ${input.maxHeight}`,
@@ -40,6 +46,7 @@ export default function DogCreate() {
             temperament: input.temperament.join(", "),
           };
           dispatch(postDogs(crear));
+          alert('Dog Created!')
           setInput({
             name: "",
             minHeight: "",
@@ -52,8 +59,8 @@ export default function DogCreate() {
             temperament: [],
             createdInBd: true,
           });
-          alert('Dog Created!')
-      }
+          history.push("/home")
+      }}
       function handleChange(e) {
         setInput({
           ...input,
@@ -210,7 +217,7 @@ export default function DogCreate() {
               </form>
             </div>
           </div>
-          <div className="imgperfil">
+          <div className="img">
             <img src="https://64.media.tumblr.com/d26b86f59e41e57ecb6d053e93dee97e/tumblr_o0hav8YTDN1uzrrkro1_1280.gif" alt="perfil" />
           </div>
         </div>

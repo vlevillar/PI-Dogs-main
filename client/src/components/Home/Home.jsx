@@ -7,6 +7,7 @@ import {
   orderByName,
   filterExistingBreed,
   sortWeight,
+  filtrosPi
 } from "../../redux/actions";
 import { Card } from "../Card/Card";
 import Pages from "../Pages/Pages";
@@ -49,11 +50,16 @@ export default function Home() {
     }
   }
 
+  function handleFilter(e) {
+    dispatch(filtrosPi(e.target.value))
+    setCurrentPage(1);
+  }
+
   function handleSortWeight(e) {
     if (e.target.value === "All") {
       dispatch(getDogs);
     }else{
-      dispatch(sortWeight(e.target.value));
+    dispatch(sortWeight(e.target.value));
     setCurrentPage(1);
     }
   }
@@ -115,6 +121,11 @@ export default function Home() {
         <option value="All">By weight</option>
         <option value="small">Light</option>
         <option value="big">Heavy</option>
+      </select>
+
+      <select className="filter" onChange={(e) => {handleFilter(e)}}>
+        <option value="All">By weight</option>
+        <option> Pi </option>
       </select>
 
       <select className="filter" onChange={(e) => handleFilterTemperaments(e)}>

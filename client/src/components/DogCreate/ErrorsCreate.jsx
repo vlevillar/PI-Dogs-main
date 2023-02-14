@@ -12,21 +12,29 @@ export function validation(input){
         errors.minHeight = "The minimum height cannot be greater than the maximum height";
     }else if(input.minHeight < 0){
         errors.minHeight = "Negative numbers are not allowed "
+    }else if (input.minHeight > 50){
+        errors.minHeight = "The height cant be +50"
     }
     if(!input.maxHeight){
         errors.maxHeight = "Enter the miximum height, please";
     }else if( parseInt(input.maxHeight) < parseInt(input.minHeight) ){
         errors.maxHeight = "The miximum height cannot be minor than the minimum height";
+    }else if (input.maxHeight > 50){
+        errors.maxHeight = "The height cant be +50"
     }
     if(!input.minWeight){
         errors.minWeight = "Enter the minimum Weight, please";
     }else if( parseInt(input.minWeight) > parseInt(input.maxWeight)){
         errors.minWeight = "The minimum weight cannot be greater than the maximum weight";
+    }else if (input.minWeight > 50){
+        errors.minWeight = "The Weight cant be +50"
     }
     if(!input.maxWeight){
-        errors.maxWeight = "Enter the miximum Weight, please";
+        errors.maxWeight = "Enter the maximum Weight, please";
     }else if( parseInt(input.maxWeight) < parseInt(input.minWeight) ){
         errors.maxWeight = "The maximum height cannot be minor than the minimum height";
+    }else if (input.maxWeight > 50){
+        errors.maxWeight = "The Weight cant be +50"
     }
     if(!input.minlife_span){
         errors.minlife_span = "Enter the minimum years, please";

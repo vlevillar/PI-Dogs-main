@@ -30,6 +30,7 @@ module.exports = (sequelize) => {
     image:{
       type: DataTypes.STRING,
       allowNull: true,
+      defaultValue: "https://cdn.britannica.com/60/8160-050-08CCEABC/German-shepherd.jpg",
     },
     temperament:{
       type: DataTypes.STRING,
